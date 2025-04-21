@@ -16,38 +16,41 @@ import ChatbotPage from "./pages/ChatbotPage";
 import QuotesPage from "./pages/QuotesPage";
 import RemindersPage from "./pages/RemindersPage";
 import NotFound from "./pages/NotFound";
+import { StrictMode } from "react";
 
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <AuthProvider>
-      <HealthProfileProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<LandingPage />} />
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/register" element={<RegisterPage />} />
-              <Route path="/onboarding" element={<OnboardingPage />} />
-              <Route path="/dashboard" element={<DashboardPage />} />
-              <Route path="/daily-routine" element={<Navigate to="/dashboard?tab=daily-routine" />} />
-              <Route path="/diet-plan" element={<Navigate to="/dashboard?tab=diet-plan" />} />
-              <Route path="/meditation" element={<Navigate to="/dashboard?tab=meditation" />} />
-              <Route path="/yoga" element={<Navigate to="/dashboard?tab=yoga" />} />
-              <Route path="/products" element={<ProductsPage />} />
-              <Route path="/chatbot" element={<ChatbotPage />} />
-              <Route path="/quotes" element={<QuotesPage />} />
-              <Route path="/reminders" element={<RemindersPage />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </BrowserRouter>
-        </TooltipProvider>
-      </HealthProfileProvider>
-    </AuthProvider>
-  </QueryClientProvider>
+  <StrictMode>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <AuthProvider>
+          <HealthProfileProvider>
+            <TooltipProvider>
+              <Toaster />
+              <Sonner />
+              <Routes>
+                <Route path="/" element={<LandingPage />} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/register" element={<RegisterPage />} />
+                <Route path="/onboarding" element={<OnboardingPage />} />
+                <Route path="/dashboard" element={<DashboardPage />} />
+                <Route path="/daily-routine" element={<Navigate to="/dashboard?tab=daily-routine" />} />
+                <Route path="/diet-plan" element={<Navigate to="/dashboard?tab=diet-plan" />} />
+                <Route path="/meditation" element={<Navigate to="/dashboard?tab=meditation" />} />
+                <Route path="/yoga" element={<Navigate to="/dashboard?tab=yoga" />} />
+                <Route path="/products" element={<ProductsPage />} />
+                <Route path="/chatbot" element={<ChatbotPage />} />
+                <Route path="/quotes" element={<QuotesPage />} />
+                <Route path="/reminders" element={<RemindersPage />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </TooltipProvider>
+          </HealthProfileProvider>
+        </AuthProvider>
+      </BrowserRouter>
+    </QueryClientProvider>
+  </StrictMode>
 );
 
 export default App;
