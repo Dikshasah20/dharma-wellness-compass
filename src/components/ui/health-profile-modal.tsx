@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
@@ -49,7 +48,7 @@ export const HealthProfileModal = ({ isOpen, onOpenChange }: HealthProfileModalP
       updateProfile({
         height: Number(formData.height),
         weight: Number(formData.weight),
-        age: Number(formData.age),
+        age: formData.age ? Number(formData.age) : undefined,
         gender: formData.gender as 'male' | 'female' | 'other',
         currentStep: 1
       });
@@ -57,7 +56,6 @@ export const HealthProfileModal = ({ isOpen, onOpenChange }: HealthProfileModalP
     } else {
       // Complete profile
       updateProfile({
-        ...formData,
         healthConditions: formData.healthConditions,
         allergies: formData.allergies,
         profileComplete: true,
