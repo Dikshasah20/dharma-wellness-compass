@@ -12,6 +12,15 @@ export type HealthProfile = {
   healthConditions?: string[];
   allergies?: string;
   
+  // Health Goals (Step 3)
+  goals?: string;
+  
+  // Lifestyle (Step 4)
+  dietaryPreferences?: string[];
+  sleepHours?: number;
+  exerciseFrequency?: string;
+  stressLevel?: number;
+  
   // Profile Status
   currentStep?: number;
   profileComplete?: boolean;
