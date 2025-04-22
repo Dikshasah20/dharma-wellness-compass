@@ -9,6 +9,7 @@ import { HealthProfileProvider } from "@/contexts/HealthProfileContext";
 import LandingPage from "./pages/LandingPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
+import HealthProfilePage from "./pages/HealthProfilePage";
 import OnboardingPage from "./pages/OnboardingPage";
 import DashboardPage from "./pages/DashboardPage";
 import ProductsPage from "./pages/ProductsPage";
@@ -33,6 +34,7 @@ const App = () => (
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />
+                <Route path="/health-profile" element={<HealthProfilePage />} />
                 <Route path="/onboarding" element={<OnboardingPage />} />
                 <Route path="/dashboard" element={<DashboardPage />} />
                 <Route path="/daily-routine" element={<Navigate to="/dashboard?tab=daily-routine" />} />

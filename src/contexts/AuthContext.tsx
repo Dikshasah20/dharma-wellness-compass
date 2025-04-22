@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -24,7 +23,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Check for stored user in localStorage to maintain session
     const storedUser = localStorage.getItem('ayurveda_user');
     if (storedUser) {
       try {
@@ -41,10 +39,8 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     setIsLoading(true);
     
     try {
-      // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 800));
       
-      // For demo purposes, auto-login with any credentials
       const mockUser = {
         id: 'user_' + Date.now().toString(),
         name: email.split('@')[0],
@@ -66,10 +62,8 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     setIsLoading(true);
     
     try {
-      // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 800));
       
-      // For demo purposes, create a user with provided details
       const mockUser = {
         id: 'user_' + Date.now().toString(),
         name,
@@ -78,7 +72,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       
       setUser(mockUser);
       localStorage.setItem('ayurveda_user', JSON.stringify(mockUser));
-      navigate('/onboarding');
+      navigate('/health-profile');
     } catch (error) {
       console.error('Registration failed:', error);
       throw new Error('Registration failed. Please try again.');
