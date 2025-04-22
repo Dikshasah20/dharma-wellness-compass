@@ -2,17 +2,18 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
 export type HealthProfile = {
-  height?: number; // in cm
-  weight?: number; // in kg
+  // Personal Information (Step 1)
+  height?: number;
+  weight?: number;
   age?: number;
   gender?: 'male' | 'female' | 'other';
+  
+  // Health Conditions (Step 2)
   healthConditions?: string[];
   allergies?: string;
-  dietaryPreferences?: string[];
-  sleepHours?: number;
-  stressLevel?: 'low' | 'moderate' | 'high';
-  exerciseFrequency?: 'never' | 'rarely' | 'sometimes' | 'regularly' | 'daily';
-  healthGoals?: string;
+  
+  // Profile Status
+  currentStep?: number;
   profileComplete?: boolean;
   dominantDosha?: 'vata' | 'pitta' | 'kapha' | 'vata-pitta' | 'pitta-kapha' | 'vata-kapha' | 'balanced';
 };
@@ -27,12 +28,12 @@ const HealthProfileContext = createContext<HealthProfileContextType | undefined>
 
 export const HealthProfileProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [profile, setProfile] = useState<HealthProfile>({
+    currentStep: 0,
     profileComplete: false
   });
   const [isProfileComplete, setIsProfileComplete] = useState(false);
 
   useEffect(() => {
-    // Load profile from localStorage if available
     const storedProfile = localStorage.getItem('ayurveda_health_profile');
     if (storedProfile) {
       try {
@@ -48,11 +49,8 @@ export const HealthProfileProvider: React.FC<{ children: ReactNode }> = ({ child
   const updateProfile = (data: Partial<HealthProfile>) => {
     setProfile(prevProfile => {
       const updatedProfile = { ...prevProfile, ...data };
-      
-      // Save to localStorage
       localStorage.setItem('ayurveda_health_profile', JSON.stringify(updatedProfile));
       
-      // Check if profile is complete for onboarding purposes
       if (data.profileComplete !== undefined) {
         setIsProfileComplete(data.profileComplete);
       }
