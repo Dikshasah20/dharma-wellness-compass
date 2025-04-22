@@ -83,9 +83,9 @@ export const HealthProfileModal = ({ isOpen, onOpenChange }: HealthProfileModalP
     // This is a simplified placeholder logic
     // In a real app, this would be based on actual Ayurvedic principles
     
-    if (data.stressLevel === 'high' && (data.healthConditions || []).includes('anxiety')) {
+    if (data.stressLevel === 'high' && (data.healthConditions || []).includes('Anxiety')) {
       return 'vata';
-    } else if ((data.healthConditions || []).includes('inflammation')) {
+    } else if ((data.healthConditions || []).includes('Inflammation')) {
       return 'pitta';
     } else if (data.exerciseFrequency === 'rarely' || data.exerciseFrequency === 'never') {
       return 'kapha';
@@ -93,6 +93,23 @@ export const HealthProfileModal = ({ isOpen, onOpenChange }: HealthProfileModalP
       // Random selection for demo purposes
       return types[Math.floor(Math.random() * 3)] as HealthProfile['dominantDosha'];
     }
+  };
+
+  // Render progress indicators
+  const renderProgressSteps = () => {
+    return (
+      <div className="flex justify-between mb-6 mt-2">
+        {steps.map((step, index) => (
+          <div key={index} className="flex-1">
+            <div 
+              className={`h-2 rounded-full mx-1 ${
+                index <= currentStep ? 'bg-primary' : 'bg-gray-200'
+              }`}
+            ></div>
+          </div>
+        ))}
+      </div>
+    );
   };
 
   return (
@@ -112,23 +129,9 @@ export const HealthProfileModal = ({ isOpen, onOpenChange }: HealthProfileModalP
             Help us personalize your wellness journey with Ayurvedic practices.
           </DialogDescription>
           
-          {/* Progress steps */}
-          <div className="flex justify-between mt-6 mb-8">
-            {steps.map((step, index) => (
-              <div key={index} className="flex flex-col items-center">
-                <div 
-                  className={`w-full h-1.5 rounded-full ${
-                    index <= currentStep 
-                      ? 'bg-primary' 
-                      : 'bg-secondary'
-                  }`}
-                  style={{ width: `${100 / steps.length - 5}%` }}
-                ></div>
-              </div>
-            ))}
-          </div>
+          {renderProgressSteps()}
           
-          <div>
+          <div className="mt-4">
             {currentStep === 0 && (
               <div className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -320,7 +323,7 @@ export const HealthProfileModal = ({ isOpen, onOpenChange }: HealthProfileModalP
             )}
           </div>
           
-          <div className="flex justify-between mt-8">
+          <div className="flex justify-between mt-6">
             <Button
               type="button"
               variant="outline"
