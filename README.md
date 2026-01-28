@@ -1,73 +1,115 @@
-# Welcome to your Lovable project
+<!-- PROJECT LOGO -->
 
-## Project info
+<p align="center">
+  <h1 align="center">🌿 Dharma Wellness Compass</h1>
+  <p align="center">
+    A web-based wellness guidance platform to help users track habits, improve mental health, and maintain a balanced lifestyle.
+    <br />
+    <a href="https://github.com/Dikshasah20/dharma-wellness-compass">View Repository</a>
+  </p>
+</p>
 
-**URL**: https://lovable.dev/projects/784c257a-c283-4f6f-89a7-0963f5e55e9b
+---
 
-## How can I edit this code?
+## 📌 About the Project
 
-There are several ways of editing your application.
+**Dharma Wellness Compass** is a wellness-focused web application designed to guide users toward a healthier and more mindful lifestyle. The platform acts as a **personal wellness guide (compass)** that provides tips, tracks habits, and encourages positive daily routines.
 
-**Use Lovable**
+The project focuses on combining **technology with mental and lifestyle wellness concepts**, making it useful for students, professionals, and anyone interested in self-care and mindfulness.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/784c257a-c283-4f6f-89a7-0963f5e55e9b) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🎯 Project Objectives
 
-**Use your preferred IDE**
+* Promote mental and emotional well-being
+* Encourage healthy daily habits like meditation, exercise, and sleep tracking
+* Provide wellness tips and guidance
+* Create a clean, user-friendly and interactive interface
+* Raise awareness about self-care and balanced living
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## ✨ Features
 
-Follow these steps:
+* 🧘 Daily wellness tips and guidance
+* 📊 Habit and lifestyle tracking
+* 🧠 Mental wellness awareness content
+* 🎨 Responsive and user-friendly UI
+* 🌐 Web-based platform accessible from any browser
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+*(Add or remove features based on your implementation.)*
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 🛠️ Tech Stack
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+* **Frontend:** HTML, CSS, JavaScript
+* **Framework/Libraries:** React / Tailwind CSS / Bootstrap (if used)
+* **Version Control:** Git & GitHub
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to run the project locally:
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/Dikshasah20/dharma-wellness-compass.git
 ```
 
-**Edit a file directly in GitHub**
+### 2️⃣ Navigate to Project Folder
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+cd dharma-wellness-compass
+```
 
-**Use GitHub Codespaces**
+### 3️⃣ Open in Browser
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+If it is a simple frontend project:
 
-## What technologies are used for this project?
+```bash
+open index.html
+```
 
-This project is built with:
+Or use Live Server in VS Code.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## 🌍 Use Cases
 
-Simply open [Lovable](https://lovable.dev/projects/784c257a-c283-4f6f-89a7-0963f5e55e9b) and click on Share -> Publish.
+* Students managing academic stress
+* Professionals maintaining work-life balance
+* Personal wellness and self-care tracking
+* Mental health awareness platforms
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## 👩‍💻 Author
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+**Diksha Sah**
+B.Tech Computer Science Engineering Student
+Frontend & Full Stack Web Developer
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+* GitHub: [@Dikshasah20](https://github.com/Dikshasah20)
+* LinkedIn: *(Add your LinkedIn link here)*
+
+---
+
+## ⭐ Future Improvements
+
+* User authentication (Login/Signup)
+* Personalized AI-based recommendations
+* Database for storing user habits and progress
+* Mobile app version
+
+---
+
+## 📜 License
+
+This project is open-source and available under the **MIT License**.
+
+---
+
+✨ If you like this project, give it a ⭐ on GitHub!
